@@ -167,3 +167,6 @@ data/
 
 # PyEnv
 .python-version
+
+# Geckodriver
+geckodriver
