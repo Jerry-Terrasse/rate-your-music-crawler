@@ -29,12 +29,12 @@ def main(num: int = 1000):
     #     f.write(driver.page_source)
     # input()
 
-    sort_btn = driver.find_element(by=By.CLASS_NAME, value='newreleases_sort_btn_date')
-    btn = sort_btn
-    btn.click()
-    time.sleep(1)
-    btn.click()
-    time.sleep(1)
+    # sort_btn = driver.find_element(by=By.CLASS_NAME, value='newreleases_sort_btn_date')
+    # btn = sort_btn
+    # btn.click()
+    # time.sleep(1)
+    # btn.click()
+    # time.sleep(1)
     
     container = driver.find_element(by=By.ID, value='newreleases_items_container_new_releases_all')
     logger.debug(f"container: {container}")
