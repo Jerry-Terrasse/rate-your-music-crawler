@@ -20,7 +20,7 @@ driver = Firefox(options=options)
 driver.implicitly_wait(10)
 
 @logger.catch
-def main(num: int = 100):
+def main(num: int = 1000):
     # driver.get('https://rateyourmusic.com/release/album/pixies/bossanova/reviews/2/')
     driver.get('https://rateyourmusic.com/new-music/')
     # driver.get('https://google.com')
@@ -48,7 +48,7 @@ def main(num: int = 100):
         get_more_btn = driver.find_element(by=By.ID, value='view_more_new_releases_all')
         logger.info(f"click: {get_more_btn}")
         get_more_btn.click()
-        time.sleep(1)
+        time.sleep(1.5)
     
     results = []
     for item in items:
@@ -57,6 +57,7 @@ def main(num: int = 100):
         
         logger.debug(f"got url: {url}")
         results.append(url)
+    logger.info(f"got {len(results)} urls in total")
     
     json.dump(results, open('album_urls.json', 'w', encoding='utf-8'), indent=4)
 
